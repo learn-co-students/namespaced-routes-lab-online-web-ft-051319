@@ -8,4 +8,5 @@ RSpec.describe Preference, type: :model do
     expect(p.allow_create_artists).to eq false
     expect(p.allow_create_songs).to eq true
   end
+
 end

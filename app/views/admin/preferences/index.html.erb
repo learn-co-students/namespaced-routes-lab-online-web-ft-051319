@@ -1,0 +1,12 @@
+<h1>Admin Preferences</h1>
+
+<ul>
+    <li>Artist Sort Order: <strong><%= @preference.artist_sort_order %></strong></li>
+    <li>Song Sort Order: <strong><%= @preference.song_sort_order %></strong></li>
+    <li>Allow Create Artists? <strong><%= @preference.allow_create_artists %></strong></li>
+    <li>Allow Create Songs? <strong><%= @preference.allow_create_songs %></strong></li>
+</ul>
+
+<br><br>
+
+<%= link_to "Edit Admin Preferences", edit_admin_preference_path(@preference) %>

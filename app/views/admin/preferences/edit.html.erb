@@ -1,0 +1,19 @@
+<h1>Edit Admin Preferences</h1>
+
+<%= form_for admin_preference_path(@preference) do |f| %>
+    <input name="_method" type="hidden" value="patch" />
+    
+    <%= f.label :artist_sort_order %>
+    <%= f.select :artist_sort_order, ["ASC", "DESC"], {selected: @preference.artist_sort_order} %><br>
+
+    <%= f.label :song_sort_order %>
+    <%= f.select :song_sort_order, ["ASC", "DESC"], {selected: @preference.song_sort_order} %><br>
+
+    <%= f.label :allow_create_artists %>
+    <%= f.select :allow_create_artists, [true, false], {selected: @preference.allow_create_artists} %><br>
+
+    <%= f.label :allow_create_songs %>
+    <%= f.select :allow_create_songs, [true, false], {selected: @preference.allow_create_songs} %><br>
+
+    <%= f.submit "Update Preferences" %>
+<% end %>

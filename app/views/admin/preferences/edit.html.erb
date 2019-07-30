@@ -1,7 +1,6 @@
 <h1>Edit Admin Preferences</h1>
 
-<%= form_for admin_preference_path(@preference) do |f| %>
-    <input name="_method" type="hidden" value="patch" />
+<%= form_for(@preference, url: admin_preference_path(@preference)) do |f| %>
     
     <%= f.label :artist_sort_order %>
     <%= f.select :artist_sort_order, ["ASC", "DESC"], {selected: @preference.artist_sort_order} %><br>

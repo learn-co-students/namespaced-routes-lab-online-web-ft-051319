@@ -25,8 +25,13 @@ class SongsController < ApplicationController
   end
 
   def new
-    @song = Song.new
-  end
+    if Preference.first.allow_create_songs
+      @song = Song.new
+    else
+      redirect_to songs_path, alert: "You cannot create a new artist."
+    end 
+  end	  
+  
 
   def create
     @song = Song.new(song_params)
